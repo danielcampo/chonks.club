@@ -1,0 +1,164 @@
+.hero_guardians img,
+.hero_monsters img {
+  height: 115%;
+  position: absolute;
+}
+
+/* 
+	##################
+	##################
+	##################
+	HERO CHONKS
+	##################
+*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .hero_guardians,
+  .hero_monsters {
+    bottom: 0;
+    height: 70vh;
+    width: 100vw;
+  }
+
+  .hero_guardians {
+    left: 0;
+  }
+
+  .hero_guardians .hero_chonk_t2 {
+    height: 80% !important;
+    left: -30% !important;
+    top: -20% !important;
+  }
+  .hero_guardians .hero_chonk_t1,
+  .hero_guardians .hero_chonk_b3 {
+    display: none;
+  }
+  .hero_guardians .hero_chonk_b2 {
+    height: 80% !important;
+    left: -38% !important;
+    top: -25% !important;
+  }
+  .hero_guardians .hero_chonk_b1 {
+    left: -15% !important;
+  }
+
+  .hero_monsters .hero_chonk_t2 {
+    height: 80% !important;
+    right: -40% !important;
+    top: -20% !important;
+  }
+  .hero_monsters .hero_chonk_t1,
+  .hero_monsters .hero_chonk_b3 {
+    display: none;
+  }
+  .hero_monsters .hero_chonk_b2 {
+    height: 80% !important;
+    right: -45% !important;
+    top: -25% !important;
+  }
+  .hero_monsters .hero_chonk_b1 {
+    right: -20% !important;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1280px) {
+  .hero_guardians,
+  .hero_monsters {
+    bottom: 0;
+    height: 80vh;
+    width: 100vw;
+  }
+
+  .hero_guardians img,
+  .hero_monsters img {
+    height: 120%;
+  }
+
+  .hero_guardians {
+    left: 0;
+  }
+
+  .hero_guardians .hero_chonk_t2 {
+    height: 80% !important;
+    left: -30% !important;
+    top: -20% !important;
+  }
+  .hero_chonk_t1,
+  .hero_chonk_b3 {
+    display: none;
+  }
+  .hero_guardians .hero_chonk_b2 {
+    height: 80% !important;
+    left: -28% !important;
+    top: -25% !important;
+  }
+  .hero_guardians .hero_chonk_b1 {
+    left: -5% !important;
+  }
+
+  .hero_monsters .hero_chonk_t2 {
+    height: 80% !important;
+    right: -40% !important;
+    top: -20% !important;
+  }
+
+  .hero_monsters .hero_chonk_b2 {
+    height: 80% !important;
+    right: -35% !important;
+    top: -25% !important;
+  }
+  .hero_monsters .hero_chonk_b1 {
+    right: -10% !important;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero_guardians img,
+  .hero_monsters img {
+    top: -20px;
+    width: auto;
+  }
+
+  .hero_guardians img {
+    left: -4%;
+  }
+
+  .hero_guardians .hero_chonk_b3 {
+    left: -7%;
+  }
+
+  .hero_monsters img {
+    right: -6%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero_guardians .hero_chonk_t2 {
+    height: 80% !important;
+    left: -40% !important;
+    top: -20% !important;
+  }
+
+  .hero_chonk_t1,
+  .hero_chonk_t2,
+  .hero_chonk_b3 {
+    display: none;
+  }
+
+  .hero_guardians .hero_chonk_b2 {
+    height: 80% !important;
+    left: -150px !important;
+    top: -25% !important;
+  }
+  .hero_monsters .hero_chonk_b2 {
+    height: 80% !important;
+    right: -150px !important;
+    top: -25% !important;
+  }
+}
+/* 
+	##################
+	END HERO CHONKS
+	##################
+	##################
+	##################
+*/

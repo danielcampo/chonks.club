@@ -1,146 +1,625 @@
-.chonkstruction {
-  background-color: aqua;
-  /* background-color: #141211; */
-  overflow: hidden;
-  padding: 0;
-}
-
-.main {
-  align-items: center;
+.section_container section {
+  background-position: center;
+  background-size: cover;
   display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.copy_container {
-  background-color: #141211;
-  display: flex;
-  flex: 1;
-  align-items: center;
+#hero,
+#guardians,
+#monsters {
   height: 100vh;
-  z-index: 10;
 }
 
-.copy {
+#guardians,
+#monsters,
+.team {
+  border-top: 10px solid rgba(32, 32, 32, 0.7);
+}
+
+#hero {
+  background-image: linear-gradient(rgb(20, 20, 20) 40%, rgba(20, 20, 20, 0));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background-color linear 2s;
+}
+
+.hero_bg_container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  min-height: 900px;
+  position: absolute;
+  width: 100vw;
+}
+
+.hero_bg {
+  opacity: 80%;
+  height: 100%;
+}
+
+.hero_content_container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 5%;
+}
+
+.hero_chonk_g_b3,
+.hero_chonk_m_b3 {
+  filter: blur(0.5px);
+}
+
+.trailer {
+  border-bottom: 10px solid black;
+  border-top: 10px solid black;
+}
+
+.trailer button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 24px;
+  z-index: 1;
+}
+
+.trailer button img {
+  cursor: pointer;
+  filter: invert(50%) sepia(0%) saturate(1352%) hue-rotate(87deg)
+    brightness(120%) contrast(120%);
+}
+
+#guardians,
+#monsters {
+  align-items: center;
+}
+
+#guardians {
+  background-image: url('/img/chonk_city.webp');
+}
+
+#monsters {
+  background-image: url('/img/chonk_lair.webp');
+}
+
+.club_info_container {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.77);
+  display: flex;
+  width: 100%;
+}
+
+.club_info {
+  display: flex;
+}
+
+.club_info_copy_container {
+  align-items: center;
+  display: flex;
+}
+
+.club_info_chonks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team {
+  background-image: url('/img/team_bg.png');
+}
+
+.team_bg_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.team_container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+  padding-top: 20px;
+  width: 80%;
+  z-index: 2;
+}
+
+.team_member_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team_member {
+  display: flex;
+}
+
+.team_member div {
   padding: 10px;
 }
 
-.copy_movealong {
-  color: #fce300;
-  font-size: 1rem;
+.team_member_avatar {
+  border-radius: 250px;
+  height: 250px;
+  width: 250px;
 }
 
-.copy_under {
-  color: #fff;
-  font-size: 3rem;
+.team_member_community {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.copy_chonkstruction {
-  color: #fff;
-  font-size: 4rem;
-}
-
-.copy_chonkstruction span {
-  color: #dca33c;
-  font-weight: bold;
-}
-
-.tape {
-  height: 60px;
-  width: 600px;
-  overflow: hidden;
-}
-
-.chonk_container {
-  background-color: pink;
+.team_member_community .team_member {
+  align-items: center;
   flex: 1;
-  height: 100vh;
+  justify-content: center;
+}
+
+.team_member_community hgroup {
+  text-align: left;
+}
+
+.team_member_community .team_member_avatar {
+  border-radius: 150px;
+  height: 150px;
+  width: 150px;
+}
+
+.team_member_community .team_member_social_container {
+  justify-content: flex-start;
+  padding: 10px 0 0;
+}
+
+.team_member_social_container {
+  display: flex;
+  justify-content: center;
+}
+
+.team_member_social_container img {
+  height: 24px;
+  margin-right: 10px;
+  width: auto;
+}
+
+#footer {
+  background-color: black;
+  display: flex;
   position: relative;
-  right: 0;
-  top: 0;
-  width: 100vw;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
 }
 
-.shatter {
-  height: 100vh;
-  position: absolute;
-  z-index: 9;
+#footer div {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 80px;
+  justify-content: center;
+  position: relative;
 }
 
-.chonk_vid {
-  bottom: 0;
-  height: 105vh;
-  position: absolute;
-  right: 0;
+#footer p {
+  font-size: 0.6rem;
 }
 
-@media (max-width: 600px) {
-  .main {
+.footer_chonks {
+  height: auto;
+  position: relative;
+  top: -35px;
+  width: 100%;
+}
+
+.footer_logo {
+  height: auto;
+  width: 200px;
+}
+
+/* 
+  ##################
+  ##################
+  ##################
+  MOBILE
+  ##################
+*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #hero,
+  #guardians,
+  #monsters {
+    height: unset;
+    min-height: 100vh;
+  }
+
+  .hero_content_container nav {
+    margin-top: 10px;
+    min-width: 70%;
+  }
+
+  .hero_content_container .chonk_logo {
+    align-self: center;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 70%;
+  }
+
+  .club_info_chonk_container {
+    display: none;
+  }
+
+  .club_info_chonk_container_m {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .club_info_chonk_container_m img {
+    height: auto;
+    width: 100%;
+  }
+
+  #home,
+  #guardians,
+  #monsters,
+  .team {
+    align-items: center;
+  }
+
+  .club_info_container {
+    min-height: 85vh;
+  }
+
+  #monsters .club_info {
+    flex-direction: row-reverse;
+  }
+
+  .club_info {
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+  }
+
+  .club_info_chonk_container {
+    position: absolute;
+    top: 10px;
+  }
+
+  .club_info_chonk_container img {
+    align-self: center;
+  }
+
+  #monsters .club_info_chonk_container {
+    right: 60px;
+  }
+
+  .club_info_copy_container {
+    flex-direction: column;
+    margin-top: unset;
+    width: 60%;
+  }
+
+  .club_info_copy_container .logo {
+    align-self: center;
+    height: auto;
+    margin: 0;
+    width: 120px;
+  }
+
+  .club_info_copy {
+    width: 100%;
+  }
+
+  .club_info_copy h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  .club_info_copy h1,
+  .club_info_copy p {
+    text-align: center;
+  }
+
+  .club_info_copy p {
+    font-size: 14px;
+  }
+
+  .club_info_chonk {
+    height: 46vh;
+    width: auto;
+  }
+
+  .club_info_chonks {
+    width: 40%;
+  }
+
+  .club_info_chonks img {
+    height: auto;
+    width: 100%;
+  }
+
+  #team {
+    padding-top: 10px;
+  }
+
+  .team_title_container {
+    align-self: center;
+    padding-bottom: 20px;
+  }
+
+  .team {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .team_container {
+    padding-bottom: 0;
+  }
+
+  .team_member_container {
     flex-direction: column;
   }
 
-  .chonk_container {
-    background-color: pink;
-    flex: 1;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    right: 0;
-    top: 0;
+  .team_member {
+    flex-direction: column;
   }
 
-  .copy_container {
-    background-color: transparent;
+  .team_member_community .team_member_social_container {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .team_member_community hgroup {
+    text-align: center;
+  }
+
+  #footer div {
+    height: unset;
+    padding: 10px 0;
+  }
+
+  #footer .footer_chonks {
+    display: none;
+  }
+}
+
+/* 
+  ##################
+  ##################
+  ##################
+  SMALL SCREENS
+  ##################
+*/
+@media only screen and (min-width: 480px) and (max-width: 1280px) {
+  #hero {
+    max-height: 500px;
+  }
+
+  #guardians,
+  #monsters {
+    height: unset;
+    min-height: 500px;
+  }
+
+  .hero_content_container {
+    align-self: center;
+    width: 70vw;
+  }
+
+  .hero_content_container .chonk_logo {
+    align-self: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+    height: auto;
+    width: 70%;
+  }
+
+  .hero_content_container nav {
+    top: unset;
+    right: unset;
+    min-width: 50%;
+  }
+
+  .club_info {
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+  }
+
+  .club_info_copy_container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .club_info_copy_container .logo {
+    height: auto;
+    max-width: 250px;
+    width: 50%;
+  }
+
+  .club_info_copy {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    justify-content: flex-end;
-    z-index: 10;
   }
 
-  .copy {
-    background-color: #141211;
+  .club_info_copy h1 {
+    margin-top: 10px;
   }
 
-  .copy_under, .copy_chonkstruction {
-    padding: 0 5px;
+  .club_info_chonk_container {
+    width: 40%;
   }
 
-  .copy_under {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-  }
-  
-  .copy_chonkstruction {
-    color: #fff;
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-  
-  .copy_chonkstruction span {
-    color: #dca33c;
-    font-weight: bold;
-  }
-
-  .tape {
-    height: 30px;
-    margin-top: 2px;
-    width: 100vw;
-  }
-
-  .shatter {
-    transform: rotate(-90deg);
+  .club_info_chonk_container img {
     height: auto;
-    position: absolute;
-    right: 30px;
-    z-index: 9;
+    width: 100%;
   }
 
-  .chonk_vid {
-    height: 108vh;
-    bottom: 0;
+  .club_info_chonk_container_m {
+    display: none;
+  }
+
+  .club_info_chonk {
+    height: 80vh;
+    width: auto;
+  }
+
+  .club_info_chonks img {
+    height: auto;
+    width: 50%;
+  }
+
+  .team {
+    text-align: center;
+    height: unset;
+  }
+
+  .team_container {
+    width: 100%;
+  }
+
+  .team_member_container {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .team_member_founders {
+    flex-direction: row;
+  }
+
+  .team_member_avatar {
+    border-radius: 150px;
+    height: 150px;
+    width: 150px;
+  }
+
+  .team_member_community .team_member_avatar {
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .team_member_copy {
+    text-align: left;
+  }
+}
+
+/* 
+  ##################
+  ##################
+  ##################
+  DESKTOP
+  ##################
+*/
+@media only screen and (min-width: 1280px) and (min-height: 1400px) {
+  #hero,
+  .hero_bg_container,
+  #guardians,
+  #monsters {
+    max-height: 1000px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #hero,
+  #guardians,
+  #monsters {
+    max-height: 900px;
+  }
+
+  .hero_content_container nav {
+    position: relative;
+    right: -380px;
+    top: -100px;
+  }
+
+  .hero_content_container .chonk_logo {
+    height: 120px;
+    width: auto;
+  }
+
+  .club_info_container {
+    height: 50vh;
+    min-height: 500px;
+  }
+
+  .club_info_chonk_container {
+    width: 25%;
+  }
+
+  .club_info_chonk_container img {
+    height: auto;
+    width: 100%;
+  }
+
+  .club_info_chonk_container_m {
+    display: none;
+  }
+
+  .club_info_chonk {
+    height: 102vh;
+    width: auto;
+  }
+
+  .club_info {
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+  }
+
+  .club_info_copy_container {
+    flex-direction: row;
+    height: 40%;
+    width: 75%;
+  }
+
+  .club_info_copy_container .logo {
+    height: 128px;
+    margin-right: 20px;
+    width: auto;
+  }
+
+  .club_info_chonks {
+    height: 60%;
+    overflow: hidden;
+  }
+
+  .club_info_chonks img {
+    height: 100%;
+    width: auto;
+  }
+
+  .team {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 630px;
+  }
+
+  .team_member_founders {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .team_title_container {
+    align-self: flex-start;
+    padding-bottom: 60px;
   }
 }

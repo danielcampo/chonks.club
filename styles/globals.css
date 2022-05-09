@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap');
 
+@font-face {
+  font-family: 'prabowow';
+  src: url('/fonts/prabowow-webfont.woff2') format('woff2'),
+    url('/fonts/prabowow-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
-  /* background-color: #141211; */
+  background-color: #141211;
+  color: white;
+  font-size: 16px;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -12,27 +22,67 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: linear 1s;
+}
+
+a:hover {
+  color: #fb3536;
 }
 
 * {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'prabowow', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h5 {
+  text-transform: uppercase;
+}
+
 h1 {
-  line-height: 4rem;
+  font-size: 2.8rem;
 }
 
 h2 {
-  line-height: 2rem;
+  font-size: 2.4rem;
 }
 
-h1, h2, h3, h4, h5 {
-  text-transform: uppercase;
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.35rem;
+}
+
+h4,
+h6,
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h6 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
 }
