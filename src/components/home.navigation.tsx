@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import styles from '../styles/home.navigation.module.css';
 
 const HomeNavigation = () => {
@@ -34,7 +36,7 @@ const HomeNavigation = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <img
+            <Image
               alt="Join the Chonk Discord"
               height="28"
               src="/img/icons/icon_discord.svg"
@@ -49,7 +51,7 @@ const HomeNavigation = () => {
             rel="noreferrer"
             target="_blank"
           >
-            <img
+            <Image
               alt="Follow Chonk on Twitter"
               height="28"
               src="/img/icons/icon_twitter.svg"

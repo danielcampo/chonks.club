@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.section_container .team {
+  background-size: contain;
+}
+
 #hero,
 #guardians,
 #monsters {
@@ -188,10 +192,12 @@
   justify-content: center;
 }
 
-.team_member_social_container img {
-  height: 24px;
+.team_member_social_container a {
   margin-right: 10px;
-  width: auto;
+}
+
+.team_member_social_container a:last-child {
+  margin-right: 0;
 }
 
 #footer {
@@ -208,7 +214,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 80px;
+  height: 15vh;
   justify-content: center;
   position: relative;
 }
@@ -220,7 +226,6 @@
 .footer_chonks {
   height: auto;
   position: relative;
-  top: -35px;
   width: 100%;
 }
 
@@ -245,7 +250,6 @@
   }
 
   .hero_content_container nav {
-    margin-top: 10px;
     min-width: 70%;
   }
 
@@ -517,6 +521,10 @@
 
   .team_member_copy {
     text-align: left;
+  }
+
+  #footer div {
+    height: unset;
   }
 }
 

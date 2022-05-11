@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { ReactElement } from 'react';
+import Image from 'next/image';
 
 import MainLayout from '../components/layout.main';
 import HomeNavigation from '../components/home.navigation';
@@ -93,7 +94,7 @@ const Page = () => {
       </section>
       <section className={styles.trailer}>
         <button type="button" name="Unmute Video" onClick={unmuteVideo}>
-          <img
+          <Image
             alt="Unmute Video Icon"
             height="24"
             src="/img/icons/icon_volume.svg"
@@ -253,7 +254,7 @@ const Page = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      <img
+                      <Image
                         alt="Follow Grumpii on Twitter"
                         height="24"
                         src="/img/icons/icon_twitter.svg"
@@ -266,7 +267,7 @@ const Page = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      <img
+                      <Image
                         alt="View Grumpii's OpenSea Collections"
                         height="24"
                         src="/img/icons/icon_opensea.svg"
@@ -279,7 +280,7 @@ const Page = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      <img
+                      <Image
                         alt="View Grumpii's Rarible Collections"
                         height="24"
                         src="/img/icons/icon_rarible.svg"
@@ -320,7 +321,7 @@ const Page = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      <img
+                      <Image
                         alt="Follow epiksol on Twitter"
                         height="24"
                         src="/img/icons/icon_twitter.svg"
@@ -368,7 +369,7 @@ const Page = () => {
                         rel="noreferrer"
                         target="_blank"
                       >
-                        <img
+                        <Image
                           alt="Follow Mechnuggets on Twitter"
                           height="24"
                           src="/img/icons/icon_twitter.svg"
@@ -381,7 +382,7 @@ const Page = () => {
                         rel="noreferrer"
                         target="_blank"
                       >
-                        <img
+                        <Image
                           alt="View MechNuggets' OpenSea Collections"
                           height="24"
                           src="/img/icons/icon_opensea.svg"
@@ -394,7 +395,7 @@ const Page = () => {
                         rel="noreferrer"
                         target="_blank"
                       >
-                        <img
+                        <Image
                           alt="View MechNuggets' Rarible Collections"
                           height="24"
                           src="/img/icons/icon_rarible.svg"
@@ -425,7 +426,7 @@ const Page = () => {
                         rel="noreferrer"
                         target="_blank"
                       >
-                        <img
+                        <Image
                           alt="Follow ReDeFined on Twitter"
                           height="24"
                           src="/img/icons/icon_twitter.svg"
@@ -456,7 +457,7 @@ const Page = () => {
                         rel="noreferrer"
                         target="_blank"
                       >
-                        <img
+                        <Image
                           alt="Follow DrWindu on Twitter"
                           height="24"
                           src="/img/icons/icon_twitter.svg"
