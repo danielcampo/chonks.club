@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const ContentSecurityPolicy = `
-  connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com
+  connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com;
   default-src 'self';
   font-src 'self' fonts.gstatic.com;style-src 'self' fonts.googleapis.com;
   img-src 'self' *.google-analytics.com *.googletagmanager.com data: w3.org/svg/2000;
