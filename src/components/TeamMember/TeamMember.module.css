@@ -63,7 +63,7 @@
     justify-content: center;
   }
 
-  .team_member_community hgroup {
+  .team_member.community hgroup {
     text-align: center;
   }
 }

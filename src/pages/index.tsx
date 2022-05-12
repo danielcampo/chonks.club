@@ -28,7 +28,7 @@ const Page = () => {
         const isWithinActiveArea = (
           axisOffset: number,
           windowDimension: number
-        ) => axisOffset <= windowDimension * 0.88;
+        ) => axisOffset <= windowDimension * 0.8;
         const parallaxOffset = (axisOffset: number, windowDimension: number) =>
           windowDimension - axisOffset * movementVelocityNum;
 

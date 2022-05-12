@@ -98,7 +98,11 @@ const TeamMemberList = ({ isFounders }: { isFounders?: boolean }) => {
   const members = isFounders ? founders : communityMembers;
   return (
     <div
-      className={`isFounders ? ${styles.team_member_founders_container} : ${styles.team_member_community_container}`}
+      className={`${
+        isFounders
+          ? styles.team_member_founders_container
+          : styles.team_member_community_container
+      }`}
     >
       {members.map((memberDetails) => (
         <TeamMember key={memberDetails.name} memberDetails={memberDetails} />
