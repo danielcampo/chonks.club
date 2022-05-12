@@ -1,5 +1,43 @@
 /** @type {import('next').NextConfig} */
+
+const ContentSecurityPolicy = `
+  default-src 'self';
+  font-src 'self' fonts.gstatic.com;style-src 'self' fonts.googleapis.com;
+  script-src 'self' *.googletagmanager.com;
+  img-src 'self' *.google-analytics.com *.googletagmanager.com;
+  connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com
+`;
+
 module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ];
+  },
   i18n: {
     locales: ['en-US'],
     defaultLocale: 'en-US',
