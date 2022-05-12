@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import type { ReactElement } from 'react';
 
 import styles from '../styles/layout.module.css';
@@ -38,6 +39,19 @@ const Layout = ({ children }: PageLayout) => {
           name="msapplication-config"
           content="/favicon/browserconfig.xml"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VTNCWN01LF"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-VTNCWN01LF');
+          `}
+        </Script>
       </Head>
 
       <div className={styles.main}>{children}</div>
