@@ -1,0 +1,94 @@
+.team_member {
+  display: flex;
+}
+
+.team_member div {
+  padding: 10px;
+}
+
+.team_member_avatar {
+  border-radius: 250px;
+  height: 250px;
+  width: 250px;
+}
+
+.team_member.community {
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.team_member.community hgroup {
+  text-align: left;
+}
+
+.team_member.community .team_member_avatar {
+  border-radius: 150px;
+  height: 150px;
+  width: 150px;
+}
+
+.team_member_community .team_member_social_container {
+  justify-content: flex-start;
+  padding: 10px 0 0;
+}
+
+.team_member_social_container {
+  display: flex;
+  justify-content: center;
+}
+
+.team_member_social_container a {
+  margin-right: 10px;
+}
+
+.team_member_social_container a:last-child {
+  margin-right: 0;
+}
+
+/* 
+	##################
+	##################
+	##################
+	MOBILE
+	##################
+*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .team_member {
+    flex-direction: column;
+  }
+
+  .team_member_community .team_member_social_container {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .team_member_community hgroup {
+    text-align: center;
+  }
+}
+
+/* 
+	##################
+	##################
+	##################
+	SMALL SCREENS
+	##################
+*/
+@media only screen and (min-width: 480px) and (max-width: 1280px) {
+  .team_member_copy {
+    text-align: left;
+  }
+
+  .team_member_avatar {
+    border-radius: 150px;
+    height: 150px;
+    width: 150px;
+  }
+
+  .team_member.community .team_member_avatar {
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+  }
+}

@@ -7,35 +7,35 @@ const HomeHero = () => (
         alt="Guardian Chonk"
         className={`chonk ${styles.hero_chonk_t2}`}
         data-club="guardian"
-        data-offset="8"
+        data-movement-velocity="8"
         src="/img/hero/g_t_2.webp"
       />
       <img
         alt="Guardian Chonk"
         className={`chonk ${styles.hero_chonk_t1}`}
         data-club="guardian"
-        data-offset="10"
+        data-movement-velocity="10"
         src="/img/hero/g_t_1.webp"
       />
       <img
         alt="Guardian Chonk"
         className={`chonk ${styles.hero_chonk_b3}`}
         data-club="guardian"
-        data-offset="6"
+        data-movement-velocity="6"
         src="/img/hero/g_b_3.webp"
       />
       <img
         alt="Guardian Chonk"
         className={`chonk ${styles.hero_chonk_b2}`}
         data-club="guardian"
-        data-offset="12"
+        data-movement-velocity="12"
         src="/img/hero/g_b_2.webp"
       />
       <img
         alt="Guardian Chonk"
         className={`chonk ${styles.hero_chonk_b1}`}
         data-club="guardian"
-        data-offset="16"
+        data-movement-velocity="16"
         src="/img/hero/g_b_1.webp"
       />
     </div>
@@ -44,35 +44,35 @@ const HomeHero = () => (
         alt="Monster Chonk"
         className={`chonk ${styles.hero_chonk_t2}`}
         data-club="monster"
-        data-offset="8"
+        data-movement-velocity="8"
         src="/img/hero/m_t_2.webp"
       />
       <img
         alt="Monster Chonk"
         className={`chonk ${styles.hero_chonk_t1}`}
         data-club="monster"
-        data-offset="10"
+        data-movement-velocity="10"
         src="/img/hero/m_t_1.webp"
       />
       <img
         alt="Monster Chonk"
         className={`chonk ${styles.hero_chonk_b3}`}
         data-club="monster"
-        data-offset="6"
+        data-movement-velocity="6"
         src="/img/hero/m_b_3.webp"
       />
       <img
         alt="Monster Chonk"
         className={`chonk ${styles.hero_chonk_b2}`}
         data-club="monster"
-        data-offset="12"
+        data-movement-velocity="12"
         src="/img/hero/m_b_2.webp"
       />
       <img
         alt="Monster Chonk"
         className={`chonk ${styles.hero_chonk_b1}`}
         data-club="monster"
-        data-offset="16"
+        data-movement-velocity="16"
         src="/img/hero/m_b_1.webp"
       />
     </div>

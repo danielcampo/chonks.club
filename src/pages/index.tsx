@@ -5,6 +5,7 @@ import Image from 'next/image';
 import MainLayout from '../components/layout.main';
 import HomeNavigation from '../components/home.navigation';
 import HeroChonks from '../components/home.heroChonks';
+import TeamMembersList from '../components/TeamMembersList/TeamMembersList';
 
 import styles from '../styles/home.module.css';
 
@@ -15,14 +16,21 @@ const Page = () => {
     const parallax = (e: MouseEvent) => {
       const hero = document.getElementById(styles.hero);
       document.querySelectorAll<HTMLElement>('.chonk').forEach((layer) => {
-        const offset = layer.getAttribute('data-offset') ?? '1';
-        const offsetNum = parseInt(offset);
+        const movementVelocity =
+          layer.getAttribute('data-movement-velocity') ?? '1';
+        const movementVelocityNum = parseInt(movementVelocity);
         const normX = 150;
         const normY = 120;
         const pageX = e.pageX;
         const pageY = e.pageY;
         const wInnerHeight = window.innerHeight;
         const wInnerWidth = window.innerWidth;
+        const isWithinActiveArea = (
+          axisOffset: number,
+          windowDimension: number
+        ) => axisOffset <= windowDimension * 0.88;
+        const parallaxOffset = (axisOffset: number, windowDimension: number) =>
+          windowDimension - axisOffset * movementVelocityNum;
 
         const club = layer.getAttribute('data-club');
 
@@ -36,14 +44,18 @@ const Page = () => {
             hero.style.backgroundColor = '#141414';
           }
 
-        if (pageX <= wInnerWidth * 0.96 && pageY <= wInnerHeight * 0.96) {
-          const y = (wInnerHeight - pageY * offsetNum) / normY;
+        if (
+          isWithinActiveArea(pageX, wInnerWidth) &&
+          isWithinActiveArea(pageY, wInnerHeight)
+        ) {
+          const y = parallaxOffset(pageY, wInnerHeight) / normY;
           let x;
 
           if (club === 'guardian') {
-            x = (wInnerWidth - pageX * offsetNum) / normX;
+            x = parallaxOffset(pageX, wInnerWidth) / normX;
           } else {
-            x = (wInnerWidth - (pageX / 2) * offsetNum) / normX;
+            // slow down movement of monsters
+            x = (wInnerWidth - (pageX / 2) * movementVelocityNum) / normX;
           }
 
           layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
@@ -96,10 +108,10 @@ const Page = () => {
         <button type="button" name="Unmute Video" onClick={unmuteVideo}>
           <Image
             alt="Unmute Video Icon"
-            height="24"
+            height="48"
             src="/img/icons/icon_volume.svg"
             title="Unmute Video"
-            width="24"
+            width="48"
           />
         </button>
         <video
@@ -238,238 +250,9 @@ const Page = () => {
           <div className={styles.team_title_container}>
             <h2>Team</h2>
           </div>
-          <div className={styles.team_member_container}>
-            <div className={styles.team_member_founders}>
-              <div className={styles.team_member}>
-                <div className={styles.team_member_avatar_container}>
-                  <img
-                    alt="Grumpii's monster avatar"
-                    className={styles.team_member_avatar}
-                    src="/img/team_grumpii_avatar.webp"
-                    title="Grumpii Avatar"
-                  />
-                  <div className={styles.team_member_social_container}>
-                    <a
-                      href="https://twitter.com/GrumpiiArt"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <Image
-                        alt="Follow Grumpii on Twitter"
-                        height="24"
-                        src="/img/icons/icon_twitter.svg"
-                        title="Grumpii Twitter"
-                        width="24"
-                      />
-                    </a>
-                    <a
-                      href="https://opensea.io/Grumpii?tab=created"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <Image
-                        alt="View Grumpii's OpenSea Collections"
-                        height="24"
-                        src="/img/icons/icon_opensea.svg"
-                        title="Grumpii OpenSea"
-                        width="24"
-                      />
-                    </a>
-                    <a
-                      href="https://rarible.com/grumpiiart/created"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <Image
-                        alt="View Grumpii's Rarible Collections"
-                        height="24"
-                        src="/img/icons/icon_rarible.svg"
-                        title="Grumpii Rarible"
-                        width="24"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className={styles.team_member_copy}>
-                  <hgroup>
-                    <h3>Grumpii</h3>
-                    <h4>Founder & Lead Artist</h4>
-                  </hgroup>
-                  <p>
-                    A designer toy creator, as well as a 3D and traditional 2D
-                    artist. I’ve always loved cute, chibi, chonky, creatures
-                    with attitude, hence where my Grumpii persona was born from.
-                    I’m super into dinosaurs; T. rex and Carnotaurus are my all
-                    time favorite. My dream is to have my own toy line one day,
-                    so I continue to design and expand my own little Grumpii
-                    world. It’s such a joy to bring my imagination to life, and
-                    I’d love to bring that joy to everyone with my creations.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.team_member}>
-                <div className={styles.team_member_avatar_container}>
-                  <img
-                    alt="epiksol's guardians avatar"
-                    className={styles.team_member_avatar}
-                    src="/img/team_epiksol_avatar.webp"
-                    title="epiksol Avatar"
-                  />
-                  <div className={styles.team_member_social_container}>
-                    <a
-                      href="https://twitter.com/epiksol"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <Image
-                        alt="Follow epiksol on Twitter"
-                        height="24"
-                        src="/img/icons/icon_twitter.svg"
-                        title="epiksol Twitter"
-                        width="24"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className={styles.team_member_copy}>
-                  <hgroup>
-                    <h3>epiksol</h3>
-                    <h4>Founder & Lead Dev</h4>
-                  </hgroup>
-                  <p>
-                    A professional software engineer for over a decade and even
-                    longer as a hobby. Serving as both individual contributor,
-                    and more recently, leading multidisciplinary teams
-                    responsible for high profile, highly scalable production
-                    applications for large companies. Prior to engineering as my
-                    primary role, I was involved in a number of graphic design
-                    roles for nearly a decade as well as roles with primary
-                    focuses on marketing and business development.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.team_member_community}>
-              <div className={styles.team_member}>
-                <div className={styles.team_member_avatar_container}>
-                  <img
-                    alt="Mechnuggets' avatar"
-                    className={styles.team_member_avatar}
-                    src="/img/team_mechnuggets_avatar.webp"
-                    title="Mechnuggets Avatar"
-                  />
-                </div>
-                <div>
-                  <hgroup>
-                    <h5>Mechnuggets</h5>
-                    <h6>Project Advisor</h6>
-                    <div className={styles.team_member_social_container}>
-                      <a
-                        href="https://twitter.com/mechnuggets"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <Image
-                          alt="Follow Mechnuggets on Twitter"
-                          height="24"
-                          src="/img/icons/icon_twitter.svg"
-                          title="Mechnuggets Twitter"
-                          width="24"
-                        />
-                      </a>
-                      <a
-                        href="https://opensea.io/mechnuggets?tab=created"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <Image
-                          alt="View MechNuggets' OpenSea Collections"
-                          height="24"
-                          src="/img/icons/icon_opensea.svg"
-                          title="Mechnuggets OpenSea"
-                          width="24"
-                        />
-                      </a>
-                      <a
-                        href="https://rarible.com/mechnuggets/created"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <Image
-                          alt="View MechNuggets' Rarible Collections"
-                          height="24"
-                          src="/img/icons/icon_rarible.svg"
-                          title="Mechnuggets Rarible"
-                          width="24"
-                        />
-                      </a>
-                    </div>
-                  </hgroup>
-                </div>
-              </div>
-              <div className={styles.team_member}>
-                <div className={styles.team_member_avatar_container}>
-                  <img
-                    alt="Redefined's avatar"
-                    className={styles.team_member_avatar}
-                    src="/img/team_redefined_avatar.webp"
-                    title="Redefined's Avatar"
-                  />
-                </div>
-                <div>
-                  <hgroup>
-                    <h5>ReDeFined</h5>
-                    <h6>Community Mod</h6>
-                    <div className={styles.team_member_social_container}>
-                      <a
-                        href="https://twitter.com/ReDeFined456"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <Image
-                          alt="Follow ReDeFined on Twitter"
-                          height="24"
-                          src="/img/icons/icon_twitter.svg"
-                          title="ReDeFined's Twitter"
-                          width="24"
-                        />
-                      </a>
-                    </div>
-                  </hgroup>
-                </div>
-              </div>
-              <div className={styles.team_member}>
-                <div className={styles.team_member_avatar_container}>
-                  <img
-                    alt="DrWindu's avatar"
-                    className={styles.team_member_avatar}
-                    src="/img/team_drwindu_avatar.webp"
-                    title="DrWindu's Avatar"
-                  />
-                </div>
-                <div>
-                  <hgroup>
-                    <h5>DrWindu</h5>
-                    <h6>Community Mod</h6>
-                    <div className={styles.team_member_social_container}>
-                      <a
-                        href="https://twitter.com/drwindu69"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <Image
-                          alt="Follow DrWindu on Twitter"
-                          height="24"
-                          src="/img/icons/icon_twitter.svg"
-                          title="DrWindu's Twitter"
-                          width="24"
-                        />
-                      </a>
-                    </div>
-                  </hgroup>
-                </div>
-              </div>
-            </div>
+          <div className={styles.team_members_container}>
+            <TeamMembersList isFounders />
+            <TeamMembersList />
           </div>
         </div>
         <div className={styles.team_bg_overlay}></div>
