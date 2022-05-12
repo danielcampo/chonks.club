@@ -1,6 +1,6 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/chonkstruction.module.css";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/chonkstruction.module.css';
 
 const Chonkstruction: NextPage = () => {
   return (
@@ -22,7 +22,11 @@ const Chonkstruction: NextPage = () => {
               <span>Chonk</span>struction
             </h1>
             <div className={styles.tape}>
-              <img alt="construction tape" src="/img/arrow.gif" height="30" />
+              <img
+                alt="construction tape"
+                src="/img/chonkstruction/arrow.gif"
+                height="30"
+              />
             </div>
           </div>
         </div>
@@ -30,12 +34,12 @@ const Chonkstruction: NextPage = () => {
           <img
             className={styles.shatter}
             alt="shatter"
-            src="/img/shatter.svg"
+            src="/img/chonkstruction/shatter.svg"
           />
           <img
             className={styles.shatter_m}
             alt="shatter"
-            src="/img/shatter-m.svg"
+            src="/img/chonkstruction/shatter-m.svg"
           />
           <video
             className={styles.chonk_vid}
