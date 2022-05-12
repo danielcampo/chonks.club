@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
 const ContentSecurityPolicy = `
+  connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com
   default-src 'self';
   font-src 'self' fonts.gstatic.com;style-src 'self' fonts.googleapis.com;
-  script-src 'self' 'unsafe-inline' *.googletagmanager.com;
   img-src 'self' *.google-analytics.com *.googletagmanager.com;
-  connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com
+  script-src 'self' 'unsafe-inline' *.googletagmanager.com;
+  style-src-attr 'self' 'unsafe-inline';
 `;
 
 module.exports = {
