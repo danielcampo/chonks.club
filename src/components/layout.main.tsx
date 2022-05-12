@@ -39,21 +39,20 @@ const Layout = ({ children }: PageLayout) => {
           name="msapplication-config"
           content="/favicon/browserconfig.xml"
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VTNCWN01LF"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-        
-            gtag('config', 'G-VTNCWN01LF');
-          `}
-        </Script>
       </Head>
-
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-VTNCWN01LF"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+      
+          gtag('config', 'G-VTNCWN01LF');
+        `}
+      </Script>
       <div className={styles.main}>{children}</div>
     </>
   );
