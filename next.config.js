@@ -4,7 +4,7 @@ const ContentSecurityPolicy = `
   connect-src 'self' *.google-analytics.com *.analytics.google.com *.googletagmanager.com
   default-src 'self';
   font-src 'self' fonts.gstatic.com;style-src 'self' fonts.googleapis.com;
-  img-src 'self' *.google-analytics.com *.googletagmanager.com;
+  img-src 'self' *.google-analytics.com *.googletagmanager.com data: w3.org/svg/2000;
   script-src 'self' 'unsafe-inline' *.googletagmanager.com;
   style-src-attr 'self' 'unsafe-inline';
 `;
