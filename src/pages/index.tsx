@@ -5,12 +5,14 @@ import Image from 'next/image';
 import MainLayout from '../components/layout.main';
 import HomeNavigation from '../components/home.navigation';
 import HeroChonks from '../components/home.heroChonks';
+import Club from '../components/Club/Club';
 import TeamMembersList from '../components/TeamMembersList/TeamMembersList';
 
 import styles from '../styles/home.module.css';
 
 const Page = () => {
   const [trailerMuted, setTrailerMuted] = useState(true);
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const parallax = (e: MouseEvent) => {
@@ -128,122 +130,8 @@ const Page = () => {
         </video>
       </section>
       <div id="clubs">
-        <section id={styles.guardians}>
-          <div className={styles.club_info_container}>
-            <div className={styles.club_info_chonk_container}>
-              <img
-                alt="Chonk from the Guardians Club"
-                className={styles.club_info_chonk}
-                src="/img/chonk_guardian_half.webp"
-                title="Guardian Chonk"
-              />
-            </div>
-            <div className={styles.club_info}>
-              <div className={styles.club_info_copy_container}>
-                <div className={styles.club_info_chonk_container_m}>
-                  <img
-                    alt="Chonk from the Guardians Club"
-                    className={styles.club_info_chonk}
-                    src="/img/guardian.webp"
-                    title="Guardian Chonk"
-                  />
-                </div>
-                <img
-                  alt="Guardians Club Logo"
-                  className={styles.logo}
-                  src="/img/chonks_club_guardians.svg"
-                />
-                <div className={styles.club_info_copy}>
-                  <h1>Guardians</h1>
-                  <p>
-                    The Guardians club live in a modern civilization. Guardians
-                    are the defenders of their fellow chonk. They have opted to
-                    rely on math and science to develop their tech and armaments
-                    in order to fight back against those who may want to
-                    encroach on their way of living.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.club_info_chonks}>
-                <img
-                  alt="Chonk from the Guardians Club"
-                  src="/img/chonks/chonk_guardian_s_001.webp"
-                />
-                <img
-                  alt="Chonk from the Guardians Club"
-                  src="/img/chonks/chonk_guardian_s_002.webp"
-                />
-                <img
-                  alt="Chonk from the Guardians Club"
-                  src="/img/chonks/chonk_guardian_s_003.webp"
-                />
-                <img
-                  alt="Chonk from the Guardians Club"
-                  src="/img/chonks/chonk_guardian_s_004.webp"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* END Guardians */}
-        <section id={styles.monsters}>
-          <div className={styles.club_info_container}>
-            <div className={styles.club_info}>
-              <div className={styles.club_info_copy_container}>
-                <div className={styles.club_info_chonk_container_m}>
-                  <img
-                    alt="Chonk from the Monsters Club"
-                    className={styles.club_info_chonk}
-                    src="/img/monster.webp"
-                    title="Monster Chonk"
-                  />
-                </div>
-                <img
-                  alt="Monsters Club Logo"
-                  className={styles.logo}
-                  src="/img/chonks_club_monsters.svg"
-                />
-                <div className={styles.club_info_copy}>
-                  <h1>Monsters</h1>
-                  <p>
-                    Dubbed by those residing in modern chonk society as a result
-                    of their rugged, frightening appearances. Monsters are a
-                    club of ancient, proud chonk. Living in the outskirts, they
-                    operate mysteriously and have been known to attack without
-                    warning, for unknown reasons.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.club_info_chonks}>
-                <img
-                  alt="Chonk from the Monsters Club"
-                  src="/img/chonks/chonk_monster_s_001.webp"
-                />
-                <img
-                  alt="Chonk from the Monsters Club"
-                  src="/img/chonks/chonk_monster_s_002.webp"
-                />
-                <img
-                  alt="Chonk from the Monsters Club"
-                  src="/img/chonks/chonk_monster_s_003.webp"
-                />
-                <img
-                  alt="Chonk from the Monsters Club"
-                  src="/img/chonks/chonk_monster_s_004.webp"
-                />
-              </div>
-            </div>
-            <div className={styles.club_info_chonk_container}>
-              <img
-                alt="Chonk from the Monsters Club"
-                className={styles.club_info_chonk}
-                src="/img/chonk_monster_half.webp"
-                title="Monster Chonk"
-              />
-            </div>
-          </div>
-        </section>
-        {/* END Monsters */}
+        <Club club="Guardian" />
+        <Club club="Monster" />
       </div>
       <section id="team" className={styles.team}>
         <div className={styles.team_container}>
@@ -271,9 +159,7 @@ const Page = () => {
             className={styles.footer_logo}
             src="/img/chonk_logo.svg"
           />
-          <p>
-            COPYRIGHT CHONK ©{new Date().getFullYear()}. ALL RIGHTS RESERVED.
-          </p>
+          <p>COPYRIGHT CHONK ©2021-{currentYear}. ALL RIGHTS RESERVED.</p>
         </div>
         <div>
           <img

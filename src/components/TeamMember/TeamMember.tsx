@@ -1,18 +1,17 @@
 import Image from 'next/image';
 
+import type { ChonksClubs } from '../Club';
 import styles from './TeamMember.module.css';
 
 interface Social {
-  name: string;
   isCollection: boolean;
+  name: string;
   url: string;
 }
 
-type ChonksClub = 'Guardians' | 'Monsters';
-
 export interface MemberDetails {
   bio?: string;
-  club: ChonksClub;
+  club: ChonksClubs;
   isFounder?: boolean;
   name: string;
   social: Social[];
